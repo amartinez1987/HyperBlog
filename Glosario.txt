@@ -1,0 +1,89 @@
+Conceptos importantes de Git
+Bug: Error en el código
+
+Repository: Donde se almacena todo el proyecto, el cual puede vivir tanto en local como en remoto. El repositorio guarda un historial de versiones y, más importante, de la relación de cada versión con la anterior para que pueda hacerse el árbol de versiones con las diferentes ramas.
+
+Fork: Si en algún momento queremos contribuir al proyecto de otra persona, o si queremos utilizar el proyecto de otro como el punto de partida del nuestro. Esto se conoce como “fork”.
+
+Clone: Una vez se decide hacer un fork , hasta ese momento sólo existe en GitHub. Para poder trabajar en el proyecto, toca clonar el repositorio elegido al computador personal.
+
+Branch: Es una bifurcación del proyecto que se está realizando para anexar una nueva funcionalidad o corregir un bug.
+
+Master: Rama donde se almacena la última versión estable del proyecto que se está realizando. La rama master es la que está en producción en cada momento (o casi) y debería estar libre de bugs. Así, si esta rama está en producción, sirve como referente para hacer nuevas funcionalidades y/o arreglar bugs de última hora.
+
+Commit: consiste en subir cosas a la versión local del repositorio. De esta manera se puede trabajar en la rama de forma local sin tener que modificar ninguna versión en remoto ni tener que tener la última versión remota, cosa muy útil en grandes desarrollos trabajados por varias personas.
+
+Push: Consiste en enviar todo lo que se ha confirmado con un commit al repositorio remoto. Aquí es donde se une nuestro trabajo con el de los demás.
+
+Checkout: Acción de descargarse una rama del repositorio GIT local (sí, GIT tiene su propio repositorio en local para poder ir haciendo commits) o remoto.
+Tambien te permite bajar el cambio confirmado en el repositorio a tu repositorio local
+
+Fetch: Actualiza el repositorio local bajando datos del repositorio remoto al repositorio local sin actualizarlo, es decir, se guarda una copia del repositorio remoto en el local.
+
+Merge: La acción de merge es la continuación natural del fetch. El merge permite unir la copia del repositorio remoto con tu repositorio local, mezclando los diferentes códigos.
+
+Pull: Consiste en la unión del fetch y del merge, esto es, recoge la información del repositorio remoto y luego mezcla el trabajo en local con esta.
+
+Diff: Se utiliza para mostrar los cambios entre dos versiones del mismo archivo.
+---------------------------------------------------------------------------------------------------
+staggin: son los cambios no confirmados en el repositorio, memoria ram, los puedes eliminar con
+git rm 
+
+otra definicion de staggin es un area de preparacion donde estan nuestros cambios antes de enviarlo al repositorio
+con el comando git commit
+---------------------------------------------------------------------------------------------
+
+Git Init convierte en repositorio la carpeta y queda en rama master
+
+Git status: muestra la rama y si hay cambios y los archivos que esten añadido
+git add nombre archivo, agrega el archivo para marcar que hay cambios a enviar
+git rm nobmre de archivo excluye el archivo para realizar commit o enviar cambios
+git rm --cached nombre historia 
+diferencia chached esta en memoria ram
+
+git commit -m "mensaje"
+
+configurar git para que idenrifique quien hace los cambios
+git config -> lista de comandos
+
+git config --list lista de configuracion por defecto de tu git revisar usuario y correo 
+git config --list --show-origin donde estan las configuraciones guardada
+cuando usas guion solo usas letras par acceder por letras ls -al doble -- es para usar palabras
+git config --global user.name "Anibal G. Martinez Aguas"
+git config --global user.email "anibalmartinez87@hotmail.com"
+
+git log cambios realizados en el archivo y comentarios
+
+comando par visualizar los cambios dentro del archivo
+git show nombre archivo
+
+nota si no colocas comentario te envia a una ventana de editor para indicar el comentario
+se sale con esc despues shift + zz
+
+git diff comparar dos versiones de commit
+
+-----------------------
+git reset idversion --hard ó soft ó head
+hard elimina todos las versionesa despues del idversion
+soft elimina todas las versiones despues de idversion pero deja el staggin
+head te permite regresar un archivo como estaba en el repositorio
+te permite regresar a una version especifica , hard elimina todo lo que este en staggin y soft lo conserva
+--------------------
+
+---
+git commit -am "comentario" solo se aplica a archivos que previamente se agregaron con add
+
+
+git log --stat visualiza los cambios que se realizo en cada commit archivos agregados o removidos o modificacion en el archivo
+
+git branch indica las ramas 
+
+git merge toma los cambios de una rama origen a la rama en la que nos encontramos
+
+git remote permite anclar el repositorio de git hub a nuestro repositorio local
+git remote add origin url https del repositorio
+git remote visualiza el nombre origin
+git remote -v significa sea verbal y nos muestra la url del repositoiro al que estamos anclado
+
+git push origin master significa git envialie al origin la rama master
+git pull origin maste significa que me descargue del origin los cambios
