@@ -87,3 +87,23 @@ git remote -v significa sea verbal y nos muestra la url del repositoiro al que e
 
 git push origin master significa git envialie al origin la rama master
 git pull origin maste significa que me descargue del origin los cambios
+
+-configuracion ssh
+git $home
+git config -l
+git config --global user.email "correo"
+ssh-keygen -t rsa -b 4096 -C "correo"
+te genera la llave en la ruda del home
+validar el agente corriendo
+eval $(ssh-agent -s)
+agregar la llave publica al sistema
+ssh-add ruta de llave privada id_rsa la que nunca debes mostrar 
+
+vamos a github y colocamos la llave publica
+
+despues copiamos el ssh del repositorio git a trabajar
+en la terminal de git bash en la carpeta del proyecto 
+git remote set url nombre repositorio en la mayoria de casos origin urlssh
+
+git pull descargar cambios del repositorio
+git push subir cambios al repositorio
