@@ -107,3 +107,44 @@ git remote set url nombre repositorio en la mayoria de casos origin urlssh
 
 git pull descargar cambios del repositorio
 git push subir cambios al repositorio
+
+------------------etiquetas--------------------
+
+git log --all muestra todos los logs de las ramas
+git log --all --graph te muestra las linea de rama y merge
+git log --all --decorate --oneline te muestra comprimido
+
+alias permite colocarle nombres a comandos amplios
+alias arbolito = "git log --all --decorate --oneline"
+
+crear tag
+git tag -a versionquedefina -m "comentario" id que obtiene del comando alias arbolito
+
+git show-ref --tags muestra los tags creados
+
+borrar tag
+git tag muestra los tag
+git tag -d nombre del tag -- eliminas el tag si se creo mal
+
+los tag se pueden usar como releases
+
+para que aparesca el cambio en el repositorio 
+git push origin :ref/tags/nombre del tag a eliminar
+
+---------------manejo de ramas--------
+git show-branch -- muestra ramas que existen y su historia
+git show-branch --all lo mismo pero con mas datos
+
+gitk abre en un programa mas visual
+
+
+------- pullrequest-----
+es una pausa para realizar un code review para hacer un trabajo completo
+esto es propio de github no git
+------------------------------------
+fork
+el escenario es para cuando el proyecto publico y abierto y otra persona ha realizado cambios.
+fork hace una copia actual del proyecto esto es propio de github no de git
+
+.----fuente nueva par traer datos
+git remote add upstream urlgit, esto crea una fuente nueva para traer datos
